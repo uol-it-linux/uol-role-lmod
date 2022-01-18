@@ -1,0 +1,19 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: lmod
+  author: Aidan Richmond
+  description: lmod for RHEL Linux.
+  company: "University of Leeds"
+  license: "license (MIT)"
+  platforms:
+    - name: EL
+      versions:
+        - 8
+  galaxy_tags:
+    - lmod
+    - modules
+    - rhel
+
+allow_duplicates: true
