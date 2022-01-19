@@ -1,3 +1,11 @@
 ---
 - name: Install the 'lmod' package
   package: name=Lmod state=present
+
+- name: Set MODULEPATH variable.
+  lineinfile:
+    path: /etc/environment
+    regexp: "MODULEPATH=.*"
+    line: "MODULEPATH={{ lmod_module_path }}"
+    state: present
+  when: lmod_module_path | length > 0
