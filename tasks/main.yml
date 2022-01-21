@@ -6,6 +6,6 @@
   lineinfile:
     path: /etc/environment
     regexp: "MODULEPATH=.*"
-    line: "MODULEPATH={{ lmod_module_path }}"
+    line: "MODULEPATH={{ lmod_module_path|join(':') }}"
     state: present
   when: lmod_module_path | length > 0

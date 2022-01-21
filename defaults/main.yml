@@ -1,2 +1,2 @@
 ---
-lmod_module_path: "/uollinapps/modules/unified"
+lmod_module_path: [ "/uollinapps/modules/unified" ]
