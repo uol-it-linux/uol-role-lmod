@@ -12,3 +12,15 @@
     line: "MODULEPATH={{ lmod_module_path|join(':') }}"
     state: present
   when: lmod_module_path | length > 0
+
+- name: force /etc/profile.d/module.sh
+  ansible.builtin.copy: 
+    src: module.sh
+    dest: /etc/profile.d/module.sh
+    mode: '0644'
+
+- name: force /etc/profile.d/module.csh
+  ansible:builtin.copy:
+    src: modules.csh
+    dest: /etc/profile.d/module.csh
+    mode: '0644'
