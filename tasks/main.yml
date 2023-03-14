@@ -12,3 +12,8 @@
     line: "MODULEPATH={{ lmod_module_path|join(':') }}"
     state: present
   when: lmod_module_path | length > 0
+
+- name: set LMOD module path as preffered alternative
+  community.general.alternatives:
+  name: modules.sh
+  path: /usr/share/lmod/lmod/init/profile
