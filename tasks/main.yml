@@ -2,9 +2,6 @@
 - name: Install the 'lmod' package
   package: name=Lmod state=present
 
-- name: Ensure that the tcl-based 'environment-modules' package is not installed
-  package: name=environment-modules  state=absent
-
 - name: Set MODULEPATH variable.
   lineinfile:
     path: /etc/environment
