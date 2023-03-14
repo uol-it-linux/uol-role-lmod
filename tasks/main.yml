@@ -12,5 +12,5 @@
 
 - name: set LMOD module path as preffered alternative
   community.general.alternatives:
-  name: modules.sh
-  path: /usr/share/lmod/lmod/init/profile
+    name: modules.sh
+    path: /usr/share/lmod/lmod/init/profile
