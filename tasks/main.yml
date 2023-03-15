@@ -11,6 +11,6 @@
   when: lmod_module_path | length > 0
 
 - name: set LMOD module path as preffered alternative
-  community.general.alternatives:
+  alternatives:
     name: modules.sh
     path: /usr/share/lmod/lmod/init/profile
