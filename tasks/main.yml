@@ -2,9 +2,6 @@
 - name: Install the 'lmod' package
   package: name=Lmod state=present
 
-- name: Ensure that the tcl-based 'environment-modules' package is not installed
-  package: name=environment-modules  state=absent
-
 - name: Set MODULEPATH variable.
   lineinfile:
     path: /etc/environment
@@ -12,3 +9,8 @@
     line: "MODULEPATH={{ lmod_module_path|join(':') }}"
     state: present
   when: lmod_module_path | length > 0
+
+- name: set LMOD module path as preffered alternative
+  alternatives:
+    name: modules.sh
+    path: /usr/share/lmod/lmod/init/profile
