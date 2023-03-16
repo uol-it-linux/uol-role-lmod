@@ -13,6 +13,6 @@
   when: lmod_module_path | length > 0
 
 - name: Set LMOD module path as preffered alternative
-  community.general.alternatives:
+  ansible.builtin.alternatives:
     name: modules.sh
     path: /usr/share/lmod/lmod/init/profile
