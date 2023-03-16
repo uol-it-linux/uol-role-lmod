@@ -2,6 +2,9 @@
 - name: Install the 'lmod' package
   package: name=Lmod state=present
 
+- name: Install the 'enviroment-modules' package
+  package: name=environment-modules state=present
+
 - name: Set MODULEPATH variable.
   lineinfile:
     path: /etc/environment
