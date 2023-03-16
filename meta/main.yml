@@ -3,6 +3,7 @@ dependencies: []
 
 galaxy_info:
   role_name: lmod
+  namespace: uoleeds
   author: Aidan Richmond
   description: lmod for RHEL Linux.
   company: "University of Leeds"
@@ -10,10 +11,11 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 8
+        - '8'
   galaxy_tags:
     - lmod
     - modules
     - rhel
+  min_ansible_version: "2.9"
 
 allow_duplicates: true

@@ -1,16 +1,18 @@
 ---
 - name: Install the 'lmod' package
-  package: name=Lmod state=present
+  ansible.builtin.package:
+    name: Lmod
+    state: present
 
 - name: Set MODULEPATH variable.
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/environment
     regexp: "MODULEPATH=.*"
-    line: "MODULEPATH={{ lmod_module_path|join(':') }}"
+    line: "MODULEPATH={{ lmod_module_path | join(':') }}"
     state: present
   when: lmod_module_path | length > 0
 
-- name: set LMOD module path as preffered alternative
-  alternatives:
+- name: Set LMOD module path as preffered alternative
+  community.general.alternatives:
     name: modules.sh
     path: /usr/share/lmod/lmod/init/profile
